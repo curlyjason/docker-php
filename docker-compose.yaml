@@ -15,10 +15,12 @@ services:
             - ./app:/var/www/html
         environment:
             MYSQL_HOST: db
-            MYSQL_PORT: 3306
-            MYSQL_USER: user
-            MYSQL_PASSWORD: secret
-            MYSQL_DATABASE: docker-php
+            MYSQL_PORT: ${MYSQL_PORT}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            REDIS_HOST: cache
+            REDIS_PORT: ${REDIS_PORT}
 
     # mysql
     db:
@@ -34,6 +36,8 @@ services:
             MYSQL_PASSWORD: secret
             MYSQL_DATABASE: docker-php
     # redis
+    cache:
+        image: redis:latest
 
 volumes:
     mysqldata:
