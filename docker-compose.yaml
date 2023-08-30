@@ -1,11 +1,11 @@
 services:
     # nginx
     web:
-        image: nginx:latest
+        image: httpd:latest
         ports:
-            - "8080:80"
-        volumes:
-            -   ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+            - "8081:80"
+#        volumes:
+#            -   ./apache/conf/apache2.conf:/usr/local/apache2/conf/httpd.conf
 
     # php
     app:
