@@ -4,8 +4,8 @@ services:
         image: httpd:latest
         ports:
             - "8081:80"
-#        volumes:
-#            -   ./apache/conf/apache2.conf:/usr/local/apache2/conf/httpd.conf
+        volumes:
+            -   ./apache/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf
 
     # php
     app:
